@@ -1,6 +1,5 @@
 // Import the page object for interacting with elements
 import LoginPage from "../PageObjects/Pages/LoginPage";
-import SettingsPage from "../PageObjects/Pages/SettingsPage";
 import DoctorPage from "../PageObjects/Pages/DoctorPage";
 import SubstorePage from "../PageObjects/Pages/SubstorePage";
 import PharmacyPage from "../PageObjects/Pages/PharmacyPage";
@@ -13,7 +12,6 @@ describe("Automation Suite for Yaksha Application", () => {
   // Create instance of the classes
   const loginPage = new LoginPage();
   const doctorsPage = new DoctorPage();
-  const settingsPage = new SettingsPage();
   const substorePage = new SubstorePage();
   const pharmacyPage = new PharmacyPage();
   const radiologyPage = new RadiologyPage();
@@ -39,52 +37,93 @@ describe("Automation Suite for Yaksha Application", () => {
 
   // Individual test cases
   it("TS-1 Handle Alert on Pharmacy Module", () => {
-    pharmacyPage.handlingAlertOnRadiology();
-    verifyUserIsOnCorrectURL("/Pharmacy/Order/GoodsReceiptList");
+    cy.wrap(null).then(() => {
+      pharmacyPage.handlingAlertOnRadiology();
+    }).then(() => {
+      verifyUserIsOnCorrectURL("/Pharmacy/Order/GoodsReceiptList");
+      // verifyVisitType();
+    });
   });
 
   it("TS-2 Verify to get the validation message when Click on print receipt without filling any details", () => {
-    pharmacyPage.verifyPrintReceipt();
-    verifyUserIsOnCorrectURL("/Pharmacy/Order/GoodsReceiptList");
+    cy.wrap(null).then(() => {
+      pharmacyPage.verifyPrintReceipt();
+    }).then(() => {
+      verifyUserIsOnCorrectURL("/Pharmacy/Order/GoodsReceiptList");
+      // verifyVisitType();
+    });
   });
 
   it("TS-3 Verify to data range by select Last 3 months option from drop down", () => {
-    radiologyPage.verifyDataWithinLastThreeMonths();
-    verifyUserIsOnCorrectURL("/Radiology/ImagingRequisitionList");
+    cy.wrap(null).then(() => {
+      radiologyPage.verifyDataWithinLastThreeMonths();
+    }).then(() => {
+      verifyUserIsOnCorrectURL("/Radiology/ImagingRequisitionList");
+      // verifyVisitType();
+    });
   });
 
   it("TS-4 Verify that entering a keyword matches existing records", () => {
-    medicalRecordsPage.keywordMatching();
-    verifyUserIsOnCorrectURL("/Medical-records/OutpatientList");
+    cy.wrap(null).then(() => {
+      medicalRecordsPage.keywordMatching();
+    }).then(() => {
+      verifyUserIsOnCorrectURL("/Medical-records/OutpatientList");
+      // verifyVisitType();
+    });
   });
 
   it("TS-5 Login with invalid credentials", () => {
-    loginPage.performLoginWithInvalidCredentials();
-    verifyUserIsNotLoggedin();
+    cy.wrap(null).then(() => {
+      loginPage.performLoginWithInvalidCredentials();
+    }).then(() => {
+      verifyUserIsNotLoggedin();
+      // verifyVisitType();
+    });
   });
 
-  it("TS-6 Capture screenshot of Inventory Requisition section", async () => {
-    substorePage.captureInventoryRequisitionScreenshot();
+  it("TS-6 Capture screenshot of Inventory Requisition section", () => {
+    cy.wrap(null).then(() => {
+      substorePage.captureInventoryRequisitionScreenshot();
+    }).then(() => {
+      verifyUserIsOnCorrectURL("Inventory/InventoryRequisitionList");
+    });
+    // verifyVisitType();
   });
 
-  it("TS-7 Verify field-level error message appears when updating doctor without selection", async () => {
-    adtPage.verifyFieldLevelErrorMessage();
-    verifyErrorMessage();
+  it("TS-7 Verify field-level error message appears when updating doctor without selection", () => {
+    cy.wrap(null).then(() => {
+      adtPage.verifyFieldLevelErrorMessage();
+    }).then(() => {
+      verifyErrorMessage();
+      // verifyVisitType();
+    });
   });
 
   it("TS-8 Verify Maternity Allowance Report is visible", () => {
-    maternityPage.verifyMaternityAllowanceReport();
-    verifyUserIsOnCorrectURL("/Maternity/Reports/MaternityAllowance");
+    cy.wrap(null).then(() => {
+      maternityPage.verifyMaternityAllowanceReport();
+    }).then(() => {
+      verifyUserIsOnCorrectURL("/Maternity/Reports/MaternityAllowance");
+      // verifyVisitType();
+    });
   });
 
   it("TS-9 Verify Imaging and lab order add successfully", () => {
-    doctorsPage.performInpatientImagingOrder();
-    verifyActiveOrderIsPresent();
+    cy.wrap(null).then(() => {
+      doctorsPage.performInpatientImagingOrder();
+    }).then(() => {
+      verifyActiveOrderIsPresent();
+      // verifyVisitType();
+    });
   });
 
   it("TS-10 Verify to filter the records by select X-RAY from Filter drop down", () => {
-    radiologyPage.filterListRequestsByDateAndType();
-    verifyUserIsOnCorrectURL("/Radiology/ImagingRequisitionList");
+    cy.wrap(null).then(() => {
+      radiologyPage.filterListRequestsByDateAndType();
+    }).then(() => {
+      verifyUserIsOnCorrectURL("/Radiology/ImagingRequisitionList");
+      // verifyVisitType();
+    });
   });
 });
 
