@@ -7,8 +7,6 @@ export default class MaternityPage {
       maternityAllowanceReport: '',
       dateFrom: '',
       showReportBtn: '',
-      tableRowLocator: '',
-      createdOn: '',
       dataType: "",
     };
   }
