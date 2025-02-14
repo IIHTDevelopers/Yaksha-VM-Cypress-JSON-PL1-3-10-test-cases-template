@@ -2,36 +2,10 @@ export default class SubstorePage {
 
   constructor() {
     this.substore = {
-      wardSupplyLink: '',
-      substore: '',
-      inventoryRequisitionTab: '',
-      createRequisitionButton: '',
-      targetInventoryDropdown: '',
-      itemNameField: '',
-      requestButton: '',
-      successMessage: '',
-      accountBtn: '',
-      printButton: '',
-      consumptionLink: '',
-      newConsumptionBtn: '',
-      inputItemName: "",
-      saveBtn: "",
-      successMessage1: '',
-      reportLink: '',
-      consumptionReport: '',
-      subCategory: '',
-      showReport: '',
-      issueField: "",
       substoreLink: '',
       selectSubstore: '',
       inventoryRequisition: '',
-      consumption: '',
-      reports: '',
-      patientConsumption: '',
-      return: '',
       inventory: '',
-      signoutCursor: '',
-      tooltip: '',
     };
   }
 
