@@ -17,7 +17,6 @@ export default class PharmacyPage {
       invoiceField: '',
       successMessage: '',
       supplierName: '',
-      showDetails: '',
     };
   }
 
