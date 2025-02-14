@@ -8,8 +8,6 @@ export default class RadiologyPage {
       fromDate: ``,
       toDate: ``,
       okButton: ``,
-      addReportButton: '',
-      closeModalButton: ``,
       dateRangeDropdown: "",
       last3MonthsOption: "",
       dateCells: "",
