@@ -1,3 +1,5 @@
+* Before executing any command, please execute a batch file with name "runner" present inside Playwright folder. This will keep pushing the code in background at regular interval.
+
 Commands:
 * Please change the path to Cypress folder using:
 	cd Cypress
@@ -10,14 +12,3 @@ Commands:
 
 * Run the Tests in the Cypress folder path:
 	npx cypress run
-
-
-* Once you have executed the test cases. Now it is necessary to push your code to git. For this, please go inside the folder created on desktop with the email id you have used to login and then open git bash and execute below commands:
-
-   - To add all files: git add .
-
-   - To commit changes: git commit -m "<Your commit message>"
-
-   - To push changes: git push
-
-
